@@ -1,8 +1,7 @@
-import express from 'express'
-import type { Application, Request, Response, NextFunction } from 'express'
+import express, { type Application, type Request, type Response, type NextFunction } from 'express'
 
 const app: Application = express()
-const port = 4000
+const port: number = 4000
 
 // Routing
 app.use('/help', (req: Request, res: Response, next: NextFunction) => {
@@ -10,6 +9,4 @@ app.use('/help', (req: Request, res: Response, next: NextFunction) => {
 })
 
 // Init app
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`)
-})
+app.listen(port, () => console.log(`Server is listening on port ${port}`))

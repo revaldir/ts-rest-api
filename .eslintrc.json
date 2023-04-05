@@ -10,10 +10,12 @@
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module",
-        "project": ["tsconfig.json"]
+        "project": ["**/tsconfig.json"]
     },
     "plugins": ["@typescript-eslint"],
-    "ignorePatterns": ["**/build/*", "**/node_modules/*", "**/public/*"],
+    "ignorePatterns": ["**/build/*", "**/node_modules/*", "**/public/*", "**/tsconfig.json"],
     "rules": {
+        "@typescript-eslint/no-confusing-void-expression": "off",
+        "@typescript-eslint/restrict-template-expressions": "off"
     }
 }
