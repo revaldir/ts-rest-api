@@ -7,6 +7,9 @@ import cors from 'cors'
 // Connect to MongoDB
 import './utils/connectDB'
 
+// Import deserializeToken
+import deserializeToken from './middleware/deserializeToken'
+
 const app: Application = express()
 const port: number = 4000
 
@@ -22,6 +25,9 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', '*')
   next()
 })
+
+// Use deserializeToken
+app.use(deserializeToken)
 
 // Routing
 routes(app)
